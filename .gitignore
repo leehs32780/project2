@@ -1,0 +1,8 @@
+# 설치된 패키지는 package.json과 package-lock.json으로 다시 설치할 수 있습니다.
+node_modules/
+
+# Vite가 빌드할 때 자동으로 생성하는 결과물입니다.
+dist/
+
+# 패키지 관리자와 개발 도구가 만드는 로그 파일입니다.
+*.log
