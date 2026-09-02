@@ -1,0 +1,186 @@
+/* 이 파일은 메인 페이지의 검색창과 공항별 직항 노선 카드 스타일을 관리합니다. */
+
+/* 메인 페이지 제목, 부제목, 검색 결과 메시지 설정 */
+.container > h1 {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.sub-title {
+  margin-bottom: 30px;
+  color: #637083;
+}
+
+.search-message {
+  margin: 12px 4px 0;
+  color: #1769aa;
+  font-weight: 700;
+}
+
+/* 출발지, 도착지, 여행 날짜를 입력하는 항공권 검색창 설정 */
+.search-form {
+  display: grid;
+  grid-template-columns: 0.7fr 1.2fr 1.2fr 1fr 1fr auto;
+  align-items: end;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 10px 30px #183b5914;
+
+  label {
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccd5e0;
+    border-radius: 8px;
+    background: #fff;
+    font: inherit;
+  }
+
+  select:disabled,
+  input:disabled {
+    color: #8290a3;
+    background: #f1f4f8;
+    cursor: not-allowed;
+  }
+
+  .primary-button {
+    padding: 11px 17px;
+  }
+}
+
+/* 주요 직항 노선 영역의 제목과 우측 메뉴 배치 설정 */
+.route-section {
+  margin-top: 38px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 22px;
+
+  h2 {
+    margin: 6px 0 0;
+  }
+
+  p {
+    color: #637083;
+  }
+}
+
+.eyebrow {
+  color: #1769aa;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.route-heading-side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  > p {
+    margin: 0;
+  }
+}
+
+/* 공항별 노선 카드, 공항 코드, 공항명, 노선 내용 설정 */
+.airport-route-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.airport-route-card {
+  padding: 18px 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 18px #183b590a;
+}
+
+.airport-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #edf1f5;
+
+  > span {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  div {
+    display: grid;
+    gap: 4px;
+  }
+
+  strong {
+    font-size: 16px;
+  }
+
+  small {
+    color: #8290a3;
+  }
+}
+
+.route-group {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 10px;
+  margin-top: 8px;
+
+  b {
+    color: #1769aa;
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0;
+    color: #4d5a6c;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.route-notice {
+  margin-top: 16px;
+  color: #637083;
+  font-size: 13px;
+}
+
+/* 화면이 800px 이하일 때 검색창과 공항 카드를 한 열로 표시 */
+@media (max-width: 800px) {
+  .search-form,
+  .airport-route-list {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .route-heading-side {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

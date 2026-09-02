@@ -1,0 +1,60 @@
+/* 이 파일은 모든 페이지에서 공통으로 사용하는 기본 스타일을 관리합니다. */
+
+/* 전체 요소와 페이지 본문의 기본 크기, 글꼴, 색상 설정 */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+}
+
+/* 페이지 내용을 가운데에 배치하는 공통 컨테이너 설정 */
+.container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+/* 모든 페이지에서 사용하는 헤더와 로고 설정 */
+.site-header {
+  margin-bottom: 48px;
+  padding: 20px 0;
+  background: #123b69;
+}
+.logo {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* 입력창의 제목과 기본 입력 요소 설정 */
+label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccd5e0;
+  border-radius: 8px;
+  font: inherit;
+}
+
+/* 기본 버튼과 링크형 버튼 설정 */
+.primary-button {
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: #1769aa;
+  cursor: pointer;
+  font-weight: 700;
+}
+.link-button {
+  display: inline-block;
+  text-decoration: none;
+}

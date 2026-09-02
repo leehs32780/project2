@@ -1,0 +1,41 @@
+/* 이 파일은 항공권 검색 결과 페이지의 목록과 도구 스타일을 관리합니다. */
+
+/* 검색된 항공편 목록과 개별 항공편 카드 설정 */
+.flight-list {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+.flight-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* 항공권 가격과 검색 조건 요약 문구 설정 */
+.flight-price {
+  font-size: 20px;
+  font-weight: 700;
+}
+.search-summary,
+.flight-card span {
+  color: #637083;
+}
+
+/* 검색 결과 위의 정렬 및 필터 도구 설정 */
+.result-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+.result-tools select {
+  padding: 10px;
+  border: 1px solid #ccd5e0;
+  border-radius: 8px;
+  background: #fff;
+}
