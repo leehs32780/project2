@@ -67,7 +67,8 @@ export function AirlineSpecialDialog({ airline, onClose, language }) {
 
 export default function AirlineSpecials({ onSelect, language }) {
   const [query, setQuery] = useState("");
-  const unique = [...new Map(airlines.map(airline => [airline.code, airline])).values()];
+  const unique = [...new Map(airlines.map(airline => [airline.code, airline])).values()]
+    .sort((a, b) => a.code.localeCompare(b.code, "en"));
   const filtered = unique.filter(airline => `${airline.name} ${t(airline.name)} ${airline.code}`.toLowerCase().includes(query.toLowerCase()));
   return <section className="airline-specials">
     <h2>{language === "en" ? "Airline special fares" : "항공사별 특가 캘린더"}</h2>
