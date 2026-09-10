@@ -1,0 +1,28 @@
+.route-section { position: relative; }
+.travel-side-promotions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin: 32px auto 0; }
+.travel-side-banner { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; padding: 24px 18px 18px; border: 1px solid #a8bfd0; border-radius: 18px; text-align: left; font: inherit; cursor: pointer; box-shadow: 0 8px 22px #20384d12; }
+.travel-side-pass { color: #234b69; background: linear-gradient(155deg, #e1edf7, #b6d1e4); }
+.travel-side-lounge { color: #665342; background: linear-gradient(155deg, #f6f1e9, #e1d1bd); border-color: #cdbca8; }
+.side-brand { font-size: 11px; letter-spacing: 1.5px; font-weight: 800; }
+.travel-side-banner > strong { margin-top: 24px; font-size: 25px; line-height: 1.35; letter-spacing: -1px; word-break: keep-all; }
+.side-description { margin-top: 12px; font-size: 12px; line-height: 1.7; word-break: keep-all; }
+.side-illustration { width: 100%; height: 150px; margin: 14px 0; }
+.side-category { font-size: 10px; letter-spacing: .6px; }
+.side-link { display: block; margin-top: 14px; padding: 11px 8px; width: 100%; border-radius: 9px; background: #ffffff9c; font-size: 12px; text-align: center; font-weight: 750; }
+.travel-side-banner > small { align-self: center; margin-top: 12px; font-size: 9px; opacity: .7; }
+.travel-side-banner:hover .side-link { background: #fff; }
+.travel-side-banner:focus-visible { outline: 3px solid #1769aa; outline-offset: 4px; }
+@media (min-width: 1520px) {
+  .travel-side-promotions { display: contents; }
+  .travel-side-banner { position: absolute; top: 180px; width: 148px; min-height: 400px; padding: 20px 14px 16px; }
+  .travel-side-banner > strong { margin-top: 20px; font-size: 23px; }
+  .travel-side-banner .side-illustration { height: 130px; margin-block: 10px; }
+  .travel-side-pass { right: calc(100% + 48px); }
+  .travel-side-lounge { left: calc(100% + 48px); }
+}
+@media (max-width: 480px) {
+  .travel-side-promotions { gap: 12px; }
+  .travel-side-banner { padding: 20px 12px 14px; }
+  .travel-side-banner > strong { font-size: 21px; }
+  .side-illustration { height: 120px; }
+}

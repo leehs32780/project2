@@ -1,0 +1,31 @@
+.promotion-card-trigger { position: absolute; inset: 0; z-index: 2; width: 100%; border: 0; border-radius: inherit; background: transparent; cursor: pointer; }
+.promotion-card-trigger:focus-visible { outline: 3px solid #1769aa; outline-offset: -5px; }
+.promotion-details { width: min(540px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); padding: 28px; border: 1px solid #d4e1ed; border-radius: 22px; color: #243b51; background: #f8fbfe; box-shadow: 0 24px 80px #10253640; }
+.promotion-details::backdrop { background: #10253699; }
+.promotion-details > header { display: flex; justify-content: space-between; align-items: center; font-size: 32px; }
+.promotion-details > header button { width: 44px; height: 44px; border: 0; border-radius: 50%; background: #e8eff6; color: #354f65; font-size: 26px; cursor: pointer; }
+.promotion-details h2 { margin: 18px 0 12px; font-size: 26px; }
+.promotion-details p { margin: 0; color: #536b80; line-height: 1.75; word-break: keep-all; }
+.promotion-detail-items { display: grid; gap: 12px; margin: 24px 0; }
+.promotion-detail-items section { padding: 18px; background: #fff; border: 1px solid #e0e8f0; border-radius: 12px; }
+.promotion-detail-items h3 { margin: 0 0 8px; font-size: 17px; }
+.promotion-details > small { display: block; color: #617489; line-height: 1.6; }
+.promotion-details > .primary-button { width: 100%; margin-top: 22px; }
+.baggage-rules { margin-top: 22px; }
+.promotion-details .baggage-scope { margin: 14px 0; font-size: 12px; line-height: 1.7; }
+.baggage-rule-section { margin-top: 12px; border: 1px solid #d6e2ed; border-radius: 12px; background: #fff; overflow: hidden; }
+.baggage-rule-section > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px; cursor: pointer; font-weight: 750; list-style: none; }
+.baggage-rule-section > summary::-webkit-details-marker { display: none; }
+.baggage-rule-section > summary span { font-size: 12px; color: #1769aa; }
+.baggage-rule-section > summary span::after { content: " +"; }
+.baggage-rule-section[open] > summary span::after { content: " −"; }
+.baggage-rule-section > summary:focus-visible { outline: 3px solid #1769aa; outline-offset: -3px; }
+.baggage-rule-group { margin: 0 14px 14px; padding: 14px; border-radius: 10px; }
+.baggage-rule-group.allowed { background: #edf6f1; }
+.baggage-rule-group.restricted { background: #fff0ed; }
+.baggage-rule-group h3 { margin: 0 0 10px; font-size: 15px; }
+.baggage-rule-group ul { margin: 0; padding-left: 18px; }
+.baggage-rule-group li { margin-top: 10px; font-size: 13px; line-height: 1.75; }
+.baggage-rule-group a, .baggage-official { color: #155b91; text-underline-offset: 3px; }
+.baggage-rule-section > .baggage-scope { padding-inline: 18px; }
+.baggage-official { display: inline-block; margin-top: 16px; font-size: 13px; }

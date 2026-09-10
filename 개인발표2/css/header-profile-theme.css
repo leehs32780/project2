@@ -1,0 +1,1019 @@
+/* 계정 탈퇴 완료 안내: 확인 버튼 또는 Escape로 닫는 작은 팝업 */
+.account-deleted-dialog {
+  width: min(320px, calc(100% - 40px));
+  padding: 26px 22px 20px;
+  border: 1px solid #dce7f1;
+  border-radius: 18px;
+  color: #10243e;
+  background: #fff;
+  box-shadow: 0 18px 60px #071a2f30;
+  text-align: center;
+}
+.account-deleted-dialog::backdrop {
+  background: #071a2f66;
+}
+.account-deleted-dialog > span {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: #e3f5ef;
+  color: #168363;
+  font-size: 24px;
+}
+.account-deleted-dialog h2 {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+.account-deleted-dialog button {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 9px;
+  background: #1769aa;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* html, body, .container: 기본 화면과 공통 컨테이너 설정 */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 82% 4%, #cbe9ff 0, transparent 24rem),
+    linear-gradient(180deg, #eef8ff 0, #f7faff 32rem, #f4f7fb 100%);
+  font-family: Pretendard, "Noto Sans KR", "Segoe UI", Arial, sans-serif;
+}
+.container {
+  width: min(1180px, calc(100% - 48px));
+}
+/* 반응형 화면 — (max-width: 800px) 조건에서 배치와 크기 조정 */
+@media (max-width: 800px) {
+  .container {
+    width: min(100% - 28px, 680px);
+  }
+}
+
+/* .site-header, .logo, .site-nav, .header-action: 상단 메뉴 설정 */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 0;
+  padding: 0;
+  border-bottom: 1px solid #ffffff1c;
+  background: #071a2ff2;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 30px #071a2f1f;
+}
+.site-header .container {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* 상단 로고 */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+.logo-mark {
+  position: relative;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid #9edcff8c;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 24%, #ffffff 0 2px, transparent 3px),
+    linear-gradient(145deg, #49baff 0%, #117fc8 52%, #074c82 100%);
+  box-shadow:
+    0 0 0 4px #73caff12,
+    0 9px 25px #008ee45c,
+    inset 0 1px 0 #ffffffb8;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.logo-mark::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1px solid #8bd4ff35;
+  border-radius: 50%;
+}
+.logo-mark svg {
+  width: 35px;
+  height: 35px;
+  overflow: visible;
+}
+
+/* 항공편 검색 결과와 항공편 선택 */
+.logo-orbit,
+.logo-flight-path {
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* 상단 로고 */
+.logo-orbit {
+  stroke: #d8f2ff70;
+  stroke-width: 0.65;
+  stroke-dasharray: 2 2.25;
+}
+
+/* 항공편 검색 결과와 항공편 선택 */
+.logo-flight-path {
+  stroke: #d7f2ff;
+  stroke-width: 0.85;
+  stroke-dasharray: 1.7 1.5;
+  opacity: 0.75;
+}
+
+/* 상단 로고 */
+.logo-plane {
+  fill: #fff;
+  filter: drop-shadow(0 2px 2px #003f6ca8) drop-shadow(0 0 2px #ffffff73);
+  transform: translate(-1.2px, -1.2px) scale(1.1);
+  transform-origin: center;
+}
+.logo-star {
+  fill: #bce9ff;
+  filter: drop-shadow(0 0 3px #fff);
+}
+.logo:hover .logo-mark {
+  transform: translateY(-2px) rotate(4deg);
+  box-shadow:
+    0 0 0 5px #73caff1c,
+    0 12px 30px #008ee475,
+    inset 0 1px 0 #ffffffcc;
+}
+.logo-wordmark {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+  column-gap: 7px;
+  line-height: 1;
+}
+.logo-wordmark strong,
+.logo-wordmark b {
+  font-size: 21px;
+  letter-spacing: 0.5px;
+}
+.logo-wordmark strong {
+  font-weight: 900;
+}
+.logo-wordmark b {
+  color: #73ceff;
+  font-weight: 600;
+}
+.logo-wordmark small {
+  grid-column: 1 / -1;
+  margin-top: 5px;
+  color: #9bbbd4;
+  font-size: 6.5px;
+  font-weight: 800;
+  letter-spacing: 2.15px;
+}
+
+/* 상단 헤더와 메뉴 버튼 */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.site-nav a {
+  color: #dbeaff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-nav a:hover {
+  color: #fff;
+}
+.header-action {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+/* 로그인·회원가입과 계정 관리 */
+.login-button {
+  color: #dbeaff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* 예약 내역과 탑승객 정보 */
+.bookings-button {
+  color: #dbeaff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.bookings-button span {
+  display: inline-grid;
+  min-width: 19px;
+  height: 19px;
+  margin-left: 3px;
+  place-items: center;
+  border-radius: 10px;
+  color: #06213b;
+  background: #7dceff;
+  font-size: 9px;
+}
+.my-bookings-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 510;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: #03101de0;
+  backdrop-filter: blur(10px);
+}
+.my-bookings-panel {
+  position: relative;
+  width: min(780px, 100%);
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+  border: 1px solid #ffffff80;
+  border-radius: 25px;
+  background: #f3f8fc;
+  box-shadow: 0 30px 90px #0009;
+}
+.my-bookings-close {
+  position: absolute;
+  top: 15px;
+  right: 19px;
+  border: 0;
+  color: #c7dbeb;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+.my-bookings-panel > header {
+  padding: 34px 38px 29px;
+  color: #fff;
+  background: linear-gradient(125deg, #071a2f, #0b4777 72%, #168ddd);
+}
+.my-bookings-panel > header span {
+  color: #76caff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.my-bookings-panel > header h2 {
+  margin: 7px 0;
+  font-size: 25px;
+}
+.my-bookings-panel > header p {
+  margin: 0;
+  color: #c1d7e8;
+  font-size: 12px;
+}
+.my-bookings-list {
+  display: grid;
+  gap: 13px;
+  padding: 25px;
+}
+.my-booking-card {
+  padding: 20px;
+  border: 1px solid #d9e6ef;
+  border-radius: 16px;
+  background: #fff;
+}
+.my-booking-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-booking-top span {
+  padding: 5px 9px;
+  border-radius: 15px;
+  color: #13805d;
+  background: #e5f8f1;
+  font-size: 9px;
+  font-weight: 900;
+}
+.my-booking-top strong {
+  color: #168ddd;
+  font-size: 12px;
+}
+.my-booking-route {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin: 20px 0 7px;
+  color: #102b43;
+  font-size: 22px;
+}
+.my-booking-route i {
+  color: #459dce;
+  font-size: 17px;
+  font-style: normal;
+}
+.my-booking-card > p {
+  margin: 0 0 17px;
+  color: #758897;
+  text-align: center;
+  font-size: 10px;
+}
+.my-booking-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid #e7eef3;
+}
+.my-booking-card dl div {
+  display: grid;
+  grid-template-columns: 65px 1fr;
+  gap: 10px;
+  font-size: 11px;
+}
+.my-booking-card dt {
+  color: #8495a3;
+}
+.my-booking-card dd {
+  margin: 0;
+  color: #354f64;
+  font-weight: 700;
+}
+.booking-cancel-button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 10px;
+  border: 1px solid #edc8c8;
+  border-radius: 9px;
+  color: #bd4141;
+  background: #fff7f7;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.booking-cancel-button:hover {
+  border-color: #d95d5d;
+  color: #fff;
+  background: #d95d5d;
+}
+.my-bookings-empty {
+  padding: 55px 20px;
+  border: 1px dashed #c9d9e4;
+  border-radius: 15px;
+  color: #7e91a0;
+  background: #fff;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* 프로필 정보와 아바타 선택 */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+}
+.profile .profile-main {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 3px 7px 3px 3px;
+  border: 1px solid transparent;
+  border-radius: 22px;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+.profile .profile-main:hover {
+  border-color: #ffffff2e;
+  background: #ffffff0d;
+}
+.profile-avatar {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid #ffffff73;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #98dcff, #248fd8);
+  color: #06213b;
+  font-size: 18px;
+  font-weight: 900;
+}
+.profile-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 48px;
+}
+.profile-copy strong {
+  font-size: 13px;
+}
+.profile-copy small {
+  color: #91abc2;
+  font-size: 10px;
+}
+.profile .logout-button {
+  padding: 6px 9px;
+  border: 1px solid #ffffff2e;
+  border-radius: 8px;
+  color: #bad0e4;
+  background: #ffffff0d;
+  font-size: 10px;
+  cursor: pointer;
+}
+.profile-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 510;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #03101dd6;
+  backdrop-filter: blur(9px);
+}
+.profile-modal {
+  position: relative;
+  width: min(440px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 34px;
+  border: 1px solid #ffffffa8;
+  border-radius: 24px;
+  background: linear-gradient(155deg, #fff, #eef8ff);
+  box-shadow: 0 28px 80px #0008;
+  text-align: center;
+}
+.profile-close {
+  position: absolute;
+  top: 14px;
+  right: 17px;
+  border: 0;
+  color: #7d8fa0;
+  background: none;
+  font-size: 29px;
+  cursor: pointer;
+}
+.profile-preview {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 15px;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #a5e1ff, #278fd5);
+  box-shadow: 0 12px 28px #168ddd40;
+  font-size: 34px;
+}
+.profile-modal h2 {
+  margin: 0 0 7px;
+  color: #102a43;
+  font-size: 23px;
+}
+.profile-modal > p {
+  margin: 0 0 23px;
+  color: #718497;
+  font-size: 12px;
+}
+.profile-modal form {
+  display: grid;
+  gap: 19px;
+  text-align: left;
+}
+.profile-modal label,
+.profile-modal legend {
+  color: #4d6276;
+  font-size: 12px;
+  font-weight: 800;
+}
+.profile-modal label {
+  display: grid;
+  gap: 8px;
+}
+.profile-modal input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d3e0e9;
+  border-radius: 11px;
+  outline: none;
+  font: inherit;
+}
+.profile-modal input:focus {
+  border-color: #168ddd;
+  box-shadow: 0 0 0 4px #168ddd17;
+}
+.profile-modal fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.profile-modal legend {
+  margin-bottom: 10px;
+}
+.avatar-options {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 9px;
+}
+.avatar-groups {
+  display: grid;
+  gap: 17px;
+}
+.avatar-group h3 {
+  margin: 0 0 8px;
+  color: #607589;
+  font-size: 11px;
+}
+.avatar-options button {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  aspect-ratio: 1;
+  padding: 7px;
+  border: 1px solid #d7e3ed;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+.avatar-options button.is-selected {
+  border-color: #168ddd;
+  background: #eaf7ff;
+  box-shadow: 0 0 0 3px #168ddd17;
+}
+.profile-save {
+  padding: 13px;
+  border: 0;
+  border-radius: 11px;
+  color: #fff;
+  background: linear-gradient(135deg, #168ddd, #0867ae);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* 결제 수단과 결제 정보 입력 */
+.profile-payment {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #d7e6f0;
+  border-radius: 14px;
+  background: #f8fbfe;
+}
+.profile-payment-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-payment-heading div {
+  display: grid;
+  gap: 3px;
+}
+.profile-payment-heading b {
+  color: #29465e;
+  font-size: 13px;
+}
+.profile-payment-heading small {
+  color: #7b8f9f;
+  font-size: 10px;
+}
+.profile-payment-heading > button {
+  border: 0;
+  color: #d05252;
+  background: none;
+  font-size: 10px;
+  cursor: pointer;
+}
+.saved-card-list {
+  display: grid;
+  gap: 8px;
+}
+.saved-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 11px;
+  color: #fff;
+  background: linear-gradient(135deg, #153b62, #168ddd);
+}
+.saved-card.is-editing {
+  border-color: #6ed0ff;
+  box-shadow: 0 0 0 3px #168ddd20;
+}
+.saved-card-main {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.saved-card-main > span:nth-child(2) {
+  display: grid;
+  gap: 3px;
+}
+.saved-card strong {
+  font-size: 12px;
+}
+.saved-card small {
+  color: #dcefff;
+  font-size: 9px;
+}
+.saved-card i {
+  font-size: 9px;
+  font-style: normal;
+}
+.saved-card-delete {
+  padding: 0 10px;
+  border: 0;
+  border-left: 1px solid #ffffff35;
+  color: #fff;
+  background: #ffffff12;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+/* 공통 요소의 배치와 표시 */
+.card-register-form {
+  display: grid;
+  gap: 10px;
+}
+
+/* 결제 수단과 결제 정보 입력 */
+.card-form-title {
+  color: #29465e;
+  font-size: 11px;
+}
+.card-form-actions {
+  display: flex;
+  gap: 8px;
+}
+.card-form-actions > button {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #cbdce8;
+  border-radius: 10px;
+  color: #61788a;
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+.card-form-actions > .card-register-button {
+  border-color: #168ddd;
+  color: #fff;
+  background: linear-gradient(135deg, #168ddd, #0867ae);
+}
+.site-pin-settings {
+  display: grid;
+  gap: 11px;
+  padding: 16px;
+  border: 1px solid #cde1ef;
+  border-radius: 14px;
+  background: #f1f9ff;
+}
+.site-pin-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.site-pin-heading > div {
+  display: grid;
+  gap: 3px;
+}
+.site-pin-heading b {
+  color: #173b58;
+  font-size: 13px;
+}
+.site-pin-heading small {
+  color: #71879a;
+  font-size: 9px;
+  line-height: 1.45;
+}
+.site-pin-heading > span {
+  flex: none;
+  padding: 5px 8px;
+  border-radius: 20px;
+  color: #0873ba;
+  background: #dcefff;
+  font-size: 9px;
+  font-weight: 800;
+}
+.site-pin-settings > button {
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #168ddd, #0867ae);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* 공통 요소의 배치와 표시 */
+.card-register-button {
+  padding: 10px;
+  border: 1px solid #168ddd;
+  border-radius: 10px;
+  color: #0873ba;
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* 로그인·회원가입과 계정 관리 */
+.account-danger-zone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid #f0cccc;
+  border-radius: 12px;
+  background: #fff7f7;
+}
+.account-danger-zone div {
+  display: grid;
+  gap: 3px;
+}
+.account-danger-zone strong {
+  color: #9e3737;
+  font-size: 12px;
+}
+.account-danger-zone small {
+  color: #977070;
+  font-size: 9px;
+}
+.account-danger-zone button {
+  flex: none;
+  padding: 8px 10px;
+  border: 1px solid #d96a6a;
+  border-radius: 8px;
+  color: #b13f3f;
+  background: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+/* 반응형 화면 — (max-width: 480px) 조건에서 배치와 크기 조정 */
+@media (max-width: 480px) {
+  .avatar-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 로그인·회원가입과 계정 관리 */
+.login-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #03101dcc;
+  backdrop-filter: blur(9px);
+}
+.login-modal {
+  position: relative;
+  width: min(410px, 100%);
+  padding: 38px;
+  border: 1px solid #ffffffb8;
+  border-radius: 24px;
+  background: linear-gradient(160deg, #fff, #edf7ff);
+  box-shadow: 0 28px 80px #0008;
+  text-align: center;
+}
+.login-close {
+  position: absolute;
+  top: 15px;
+  right: 17px;
+  border: 0;
+  color: #718398;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.login-symbol {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 15px;
+  place-items: center;
+  border-radius: 17px;
+  color: #05213b;
+  background: linear-gradient(145deg, #dff5ff, #56b9f7);
+  box-shadow: 0 12px 30px #188ed74d;
+  font-size: 23px;
+}
+.login-modal > p {
+  margin: 0 0 6px;
+  color: #1684cf;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2.4px;
+}
+.login-modal h2 {
+  margin: 0 0 25px;
+  color: #071a2f;
+  font-size: 24px;
+}
+.login-modal form,
+.login-modal label {
+  display: grid;
+  gap: 9px;
+  text-align: left;
+}
+.login-modal form {
+  gap: 16px;
+}
+.login-modal label {
+  color: #40566c;
+  font-size: 12px;
+  font-weight: 800;
+}
+.login-modal input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #d3e0eb;
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  font: inherit;
+}
+.login-modal input:focus {
+  border-color: #269ce6;
+  box-shadow: 0 0 0 4px #269ce61a;
+}
+.login-error {
+  color: #d64343;
+  font-size: 12px;
+}
+.login-info {
+  color: #16805d;
+  font-size: 12px;
+}
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin: -10px 0 18px;
+  padding: 4px;
+  border-radius: 11px;
+  background: #e7eff5;
+}
+.auth-tabs button {
+  padding: 9px;
+  border: 0;
+  border-radius: 8px;
+  color: #6d8091;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.auth-tabs button.is-active {
+  color: #0e6da9;
+  background: #fff;
+  box-shadow: 0 3px 10px #163a5518;
+}
+.account-recovery-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin-top: 2px;
+  color: #a7b3bd;
+}
+.account-recovery-links button,
+.recovery-back {
+  border: 0;
+  background: transparent;
+  color: #547083;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.account-recovery-links button:hover,
+.recovery-back:hover {
+  color: #0e78bb;
+  text-decoration: underline;
+}
+.recovery-back {
+  justify-self: center;
+  padding: 3px 8px;
+}
+.login-submit {
+  padding: 14px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, #168ddd, #0666b4);
+  box-shadow: 0 12px 24px #168ddd40;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.demo-account {
+  display: block;
+  margin-top: 17px;
+  color: #7b8b9b;
+  font-size: 11px;
+}
+
+/* 처리 완료 안내 */
+.login-success-modal {
+  width: min(360px, 100%);
+  padding: 42px 34px;
+  border: 1px solid #ffffffb8;
+  border-radius: 24px;
+  background: linear-gradient(160deg, #fff, #edf8ff);
+  box-shadow: 0 28px 80px #0008;
+  text-align: center;
+  animation: login-success-in 0.28s ease-out;
+}
+.success-check {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 19px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(145deg, #36cfa0, #159870);
+  box-shadow: 0 13px 28px #15987042;
+  font-size: 30px;
+  font-weight: 900;
+}
+.login-success-modal h2 {
+  margin: 0 0 9px;
+  color: #071a2f;
+  font-size: 24px;
+}
+.login-success-modal p {
+  margin: 0 0 22px;
+  color: #557087;
+  font-size: 14px;
+}
+.login-success-modal small {
+  color: #8b9baa;
+  font-size: 11px;
+}
+/* login-success-in 애니메이션 정의 */
+@keyframes login-success-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Q&A 목록과 질문 작성 */
+.qna-action {
+  color: #dbeaff !important;
+  letter-spacing: normal;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.qna-action:hover {
+  color: #fff !important;
+}
+/* 반응형 화면 — (max-width: 800px) 조건에서 배치와 크기 조정 */
+@media (max-width: 800px) {
+  .site-header .container {
+    min-height: 64px;
+  }
+  .site-nav a:not(.header-action) {
+    display: none;
+  }
+}

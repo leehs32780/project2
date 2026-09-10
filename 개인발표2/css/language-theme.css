@@ -1,0 +1,174 @@
+/* 빈 날짜 안내는 브라우저 언어와 관계없이 선택한 앱 언어로 표시합니다. */
+.localized-date-field {
+  position: relative;
+  display: block;
+  min-width: 0;
+}
+.localized-date-field input {
+  width: 100%;
+  box-sizing: border-box;
+}
+.localized-date-placeholder {
+  display: none;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #526579;
+  font-weight: 600;
+}
+html[lang="en"] .localized-date-field[data-empty="true"]:not(:focus-within) .localized-date-placeholder {
+  display: block;
+}
+html[lang="en"] .localized-date-field[data-empty="true"]:not(:focus-within) input::-webkit-datetime-edit {
+  opacity: 0;
+}
+.localized-date-field:has(input:disabled) .localized-date-placeholder {
+  opacity: 0.5;
+}
+
+/* 상단 언어·통화 선택과 시연 환율 안내 */
+.language-picker {
+  display: grid;
+  gap: 3px;
+  color: #bed2e4;
+  font-size: 10px;
+}
+.language-picker .search-select-trigger {
+  max-width: 150px;
+  padding: 7px 9px;
+  border: 1px solid #6a8197;
+  border-radius: 8px;
+  background: #17334b;
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.language-picker .search-select-trigger:focus-visible {
+  outline: 2px solid #8ed0ff;
+  outline-offset: 2px;
+}
+.language-picker .search-select-popup {
+  top: calc(100% + 3px);
+  left: 0;
+  width: 100%;
+  padding: 2px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.language-picker .search-select-popup button {
+  padding: 7px 9px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.exchange-rate-note {
+  padding: 5px 14px;
+  background: #e8f3fb;
+  color: #445c70;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* 영어 문장 길이를 고려한 카드·메뉴·팝업 배치 */
+html[lang="en"] .site-nav {
+  gap: 18px;
+}
+html[lang="en"] .route-heading-side > p {
+  max-width: 190px;
+  line-height: 1.5;
+}
+html[lang="en"] .section-heading h2 {
+  font-size: 25px;
+}
+html[lang="en"] .route-discovery-switch .popular-toggle strong,
+html[lang="en"] .route-discovery-switch .budget-popup-toggle strong {
+  font-size: 14px;
+}
+html[lang="en"] .route-discovery-switch .budget-popup-toggle {
+  padding: 8px 14px;
+}
+html[lang="en"] .route-discovery-switch .season-toggle {
+  height: 48px;
+  min-height: 48px;
+}
+html[lang="en"] .route-discovery-switch .season-toggle strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.2;
+}
+html[lang="en"] .continent-card span {
+  font-size: 18px;
+}
+html[lang="en"] .continent-card strong {
+  margin-top: 16px;
+}
+html[lang="en"] .promotion-copy strong {
+  font-size: 15px;
+}
+html[lang="en"] .route-promotion {
+  min-height: 180px;
+}
+html[lang="en"] .promotion-copy {
+  padding-right: 12px;
+}
+html[lang="en"] .route-group {
+  grid-template-columns: 84px 1fr;
+}
+html[lang="en"] .destination-card {
+  grid-template-columns: 70px 1fr auto;
+}
+html[lang="en"] .payment-method-copy em {
+  font-size: 12px;
+}
+html[lang="en"] .payment-method-copy small {
+  font-size: 10px;
+}
+html[lang="en"] .booking-modal > h2,
+html[lang="en"] .login-modal h2 {
+  overflow-wrap: anywhere;
+}
+html[lang="en"] .search-form label {
+  letter-spacing: 0;
+}
+html[lang="en"] .airport-title > span {
+  display: none;
+}
+
+/* 태블릿과 모바일에서도 언어 선택 메뉴가 숨겨지지 않도록 줄바꿈 */
+@media (max-width: 900px) {
+  .site-header .container {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  .language-picker {
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 640px) {
+  .site-header .container {
+    justify-content: center;
+  }
+  .site-nav {
+    justify-content: center;
+  }
+  .exchange-rate-note {
+    font-size: 10px;
+  }
+  html[lang="en"] .route-heading-side > p {
+    max-width: none;
+  }
+  html[lang="en"] .continent-card span {
+    font-size: 16px;
+  }
+}

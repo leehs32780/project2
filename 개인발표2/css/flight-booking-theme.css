@@ -1,0 +1,811 @@
+/* 항공편 검색 결과 */
+.flight-results {
+  margin: 48px 0 54px;
+  padding: 28px;
+  border: 1px solid #d6e6f2;
+  border-radius: 24px;
+  background: #f4f9fd;
+  box-shadow: 0 20px 55px #0b35531c;
+}
+
+/* 항공권 검색 입력창 */
+.search-form .primary-button:disabled {
+  opacity: 0.72;
+  cursor: wait;
+  transform: none;
+}
+
+/* 항공편 검색 중 표시와 결과 없음 안내 */
+.flight-search-loading {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 15px;
+  margin: 28px 0 54px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid #cfe4f3;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f7fcff, #eaf6ff);
+  box-shadow: 0 16px 42px #123b6914;
+}
+.flight-search-loading .loading-plane {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, #168ddd, #0868b0);
+  font-size: 21px;
+  animation: loading-plane-float 0.9s ease-in-out infinite alternate;
+}
+.flight-search-loading div {
+  display: grid;
+  gap: 5px;
+}
+.flight-search-loading strong {
+  color: #173b58;
+  font-size: 15px;
+}
+.flight-search-loading small {
+  color: #71879a;
+  font-size: 11px;
+}
+.flight-search-loading i {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #168ddd 0 35%, #dceefa 35%);
+  animation: loading-progress 3s linear forwards;
+}
+.flight-no-route {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 28px 0 54px;
+  padding: 34px 24px;
+  border: 1px solid #d7e4ed;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8fbfd, #eef4f8);
+  box-shadow: 0 16px 42px #123b6912;
+}
+.flight-no-route > span {
+  display: grid;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #8ba3b5;
+  font-size: 22px;
+}
+.flight-no-route div {
+  display: grid;
+  gap: 5px;
+}
+.flight-no-route small {
+  color: #7790a3;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+.flight-no-route strong {
+  color: #173b58;
+  font-size: 19px;
+}
+.flight-no-route p {
+  margin: 0;
+  color: #71879a;
+  font-size: 11px;
+}
+/* loading-plane-float 애니메이션 정의 */
+@keyframes loading-plane-float {
+  to {
+    transform: translate(4px, -4px);
+  }
+}
+/* loading-progress 애니메이션 정의 */
+@keyframes loading-progress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* 항공편 검색 결과와 항공편 선택 */
+.flight-results-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.flight-results-heading span {
+  color: #168ddd;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.flight-results-heading h2 {
+  margin: 5px 0;
+  color: #0b263e;
+  font-size: 25px;
+}
+.flight-results-heading p {
+  margin: 0;
+  color: #6b8092;
+  font-size: 12px;
+}
+.flight-results-heading > b {
+  padding: 7px 12px;
+  border-radius: 20px;
+  color: #126fae;
+  background: #dbf1ff;
+  font-size: 11px;
+}
+
+/* 인기 여행지 목록과 가격 그래프 */
+.destination-attractions {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.8fr);
+  gap: 22px;
+  margin-bottom: 22px;
+  padding: 20px;
+  border: 1px solid #cfe4f2;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #e7f5ff, #fff);
+}
+.destination-attractions-title span {
+  color: #168ddd;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+.destination-attractions-title h3 {
+  margin: 6px 0;
+  color: #0b263e;
+  font-size: 17px;
+}
+.destination-attractions-title p {
+  margin: 0;
+  color: #6b8092;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.destination-attractions ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.destination-attractions li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #dceaf4;
+  border-radius: 12px;
+  color: #183a54;
+  background: #ffffffd9;
+  font-size: 14px;
+  font-weight: 800;
+}
+.destination-attractions li b {
+  display: grid;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #168ddd;
+  font-size: 10px;
+}
+
+/* 항공편 검색 결과와 항공편 선택 */
+.flight-list {
+  display: grid;
+  gap: 11px;
+}
+.flight-card {
+  display: grid;
+  grid-template-columns: 1.15fr 1.25fr 0.55fr 0.8fr auto;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 20px;
+  border: 1px solid #dae6ef;
+  border-radius: 16px;
+  background: #fff;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.flight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 13px 28px #0b35531c;
+}
+.airline-info {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.airline-info > span {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+.airline-info div,
+.flight-price {
+  display: grid;
+  gap: 4px;
+}
+.airline-info strong {
+  color: #1d3549;
+  font-size: 13px;
+}
+.airline-info small,
+.flight-price small {
+  color: #8a9aa8;
+  font-size: 10px;
+}
+.flight-time {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.flight-time > strong {
+  color: #102b43;
+  font-size: 19px;
+}
+.flight-time sup {
+  margin-left: 3px;
+  color: #e35e39;
+  font-size: 8px;
+}
+.flight-time div {
+  display: grid;
+  min-width: 82px;
+  text-align: center;
+}
+.flight-time small,
+.flight-time span {
+  color: #8192a0;
+  font-size: 9px;
+}
+.flight-time i {
+  height: 1px;
+  margin: 5px 0;
+  background: #9fc4dd;
+  position: relative;
+}
+.flight-time i::after {
+  content: "›";
+  position: absolute;
+  right: -1px;
+  top: -8px;
+  color: #4598cd;
+  font-style: normal;
+}
+.flight-airports {
+  display: flex;
+  justify-content: space-between;
+  color: #51697c;
+  font-size: 11px;
+  font-weight: 800;
+}
+.flight-price strong {
+  color: #092b48;
+  font-size: 17px;
+}
+.flight-price > span {
+  color: #e65e38;
+  font-size: 9px;
+}
+.flight-card > button {
+  padding: 11px 15px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #168ddd, #0868b0);
+  font-weight: 800;
+  cursor: pointer;
+}
+.return-flight-results {
+  scroll-margin-top: 90px;
+  border-color: #92cbed;
+  background: #edf8ff;
+}
+.selected-outbound {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  margin-bottom: 22px;
+  padding: 15px 100px 15px 17px;
+  border: 1px solid #bfe5d8;
+  border-radius: 13px;
+  background: #edfaf5;
+}
+.selected-outbound > span {
+  color: #16815d;
+  font-size: 10px;
+  font-weight: 900;
+}
+.selected-outbound strong {
+  color: #194b3b;
+  font-size: 13px;
+}
+.selected-outbound p {
+  margin: 0;
+  color: #648174;
+  font-size: 11px;
+}
+.selected-outbound button {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  padding: 7px 10px;
+  border: 1px solid #9dcdbd;
+  border-radius: 8px;
+  color: #27745b;
+  background: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+/* 예매 입력 및 완료 팝업 */
+.booking-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 520;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #03101dde;
+  backdrop-filter: blur(9px);
+}
+
+/* 처리 완료 안내 */
+.booking-modal,
+.booking-complete {
+  position: relative;
+  width: min(440px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 34px;
+  border: 1px solid #ffffffa3;
+  border-radius: 24px;
+  background: linear-gradient(155deg, #fff, #eff8ff);
+  box-shadow: 0 28px 80px #0009;
+}
+
+/* 예약 내역과 탑승객 정보 */
+.booking-close {
+  position: absolute;
+  top: 13px;
+  right: 17px;
+  border: 0;
+  color: #7c8e9d;
+  background: none;
+  font-size: 29px;
+  cursor: pointer;
+}
+
+/* 직항 노선 제목과 여행지 탐색 메뉴 */
+.booking-eyebrow {
+  color: #168ddd;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* 예약 내역과 탑승객 정보 */
+.booking-modal h2 {
+  margin: 7px 0 19px;
+  color: #102a43;
+}
+
+/* 항공편 검색 결과와 항공편 선택 */
+.booking-flight-summary {
+  display: grid;
+  gap: 6px;
+  padding: 15px;
+  border-radius: 13px;
+  background: #e8f5fd;
+}
+.booking-flight-summary strong {
+  color: #173b58;
+  font-size: 13px;
+}
+.booking-flight-summary span {
+  color: #647d90;
+  font-size: 11px;
+}
+.booking-flight-summary b {
+  color: #0a6dad;
+  font-size: 18px;
+}
+
+/* 예약 내역과 탑승객 정보 */
+.booking-modal form {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+.booking-modal label {
+  display: grid;
+  gap: 7px;
+  color: #4e6578;
+  font-size: 11px;
+  font-weight: 800;
+}
+.booking-modal input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #d3e0e9;
+  border-radius: 10px;
+  outline: none;
+  font: inherit;
+}
+.booking-modal input:focus {
+  border-color: #168ddd;
+  box-shadow: 0 0 0 4px #168ddd17;
+}
+.booking-caution {
+  padding: 11px;
+  border-radius: 9px;
+  color: #967122;
+  background: #fff7df;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* 처리 완료 안내 */
+.booking-modal form > button,
+.booking-complete button {
+  padding: 13px;
+  border: 0;
+  border-radius: 11px;
+  color: #fff;
+  background: linear-gradient(135deg, #168ddd, #0868b0);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* 결제 수단과 결제 정보 입력 */
+.payment-section {
+  display: grid;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid #d7e6f0;
+  border-radius: 13px;
+  background: #f8fbfe;
+}
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+
+/* 결제수단별 할인 혜택과 적용 조건 */
+.payment-method-copy { display: grid; gap: 5px; min-width: 0; }
+.payment-method-copy em { color: #086d50; font-size: 13px; font-style: normal; }
+.payment-method-copy small { color: #596d7e; font-size: 11px; font-weight: 500; line-height: 1.5; }
+.payment-method:focus-within { outline: 2px solid #168ddd; outline-offset: 2px; }
+.payment-promotion-note { color: #607386; font-size: 11px; line-height: 1.6; }
+
+/* 할인 전 금액, 할인액, 최종 결제액 요약 */
+.payment-discount-summary { margin: 16px 0; padding: 16px; border: 1px solid #d6e6ef; border-radius: 12px; background: #f4f9fc; }
+.payment-discount-summary > div { display: flex; justify-content: space-between; gap: 12px; margin: 8px 0; font-size: 14px; }
+.payment-discount-summary .payment-discount-line { color: #087753; }
+.payment-discount-summary > p { font-size: 12px; color: #88601c; }
+.payment-discount-summary .payment-final-total { border-top: 1px solid #d6e6ef; margin-top: 12px; padding-top: 14px; color: #103b67; font-size: 17px; }
+.payment-pin-total { color: #103b67; }
+
+/* 작은 화면의 결제 혜택 카드 배치 */
+@media (max-width: 480px) {
+  .payment-methods { grid-template-columns: 1fr; }
+}
+
+/* 예약 내역과 탑승객 정보 */
+.booking-modal .payment-method {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 11px;
+  border: 1px solid #d7e3ed;
+  border-radius: 11px;
+  background: #fff;
+  cursor: pointer;
+}
+.booking-modal .payment-method.is-selected {
+  border-color: #168ddd;
+  background: #eaf7ff;
+  box-shadow: 0 0 0 3px #168ddd12;
+}
+.booking-modal .payment-method input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* 결제 수단과 결제 정보 입력 */
+.payment-method b {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+  background: #183f66;
+  font-size: 12px;
+}
+.payment-method:nth-child(1) b {
+  color: #2d2600;
+  background: #fee500;
+}
+.payment-method:nth-child(2) b {
+  background: #03c75a;
+}
+.payment-method:nth-child(3) b {
+  background: #1769ff;
+}
+.payment-method span {
+  color: #29465e;
+  font-size: 11px;
+  font-weight: 800;
+}
+.payment-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.payment-heading span {
+  color: #168ddd;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+.payment-heading strong {
+  color: #29465e;
+  font-size: 11px;
+}
+.payment-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+
+/* 예약 내역과 탑승객 정보 */
+.booking-modal .payment-agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #6b7f90;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.booking-modal .payment-agree input {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  margin: 1px 0 0;
+  accent-color: #168ddd;
+}
+
+/* 결제 수단과 결제 정보 입력 */
+.payment-complete-info {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 18px;
+  padding: 13px 24px;
+  border-radius: 12px;
+  background: #eaf8f3;
+}
+.payment-complete-info b {
+  color: #12805c;
+  font-size: 20px;
+}
+.payment-complete-info span {
+  color: #608176;
+  font-size: 10px;
+}
+.pin-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 530;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #03101dea;
+  backdrop-filter: blur(12px);
+}
+.pin-modal {
+  position: relative;
+  width: min(360px, 100%);
+  padding: 38px 34px;
+  border: 1px solid #ffffffa3;
+  border-radius: 24px;
+  background: linear-gradient(155deg, #fff, #eef8ff);
+  box-shadow: 0 30px 90px #000a;
+  text-align: center;
+}
+.pin-close {
+  position: absolute;
+  top: 13px;
+  right: 17px;
+  border: 0;
+  color: #7c8e9d;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.pin-lock {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 15px;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #dff4ff, #72c5f5);
+  box-shadow: 0 12px 27px #168ddd38;
+  font-size: 25px;
+}
+.pin-modal > p {
+  margin: 0 0 6px;
+  color: #168ddd;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.pin-modal h2 {
+  margin: 0 0 8px;
+  color: #102a43;
+  font-size: 23px;
+}
+.pin-modal > small {
+  color: #748797;
+  font-size: 11px;
+}
+.pin-modal form {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  margin: 22px 0 15px;
+}
+.pin-modal input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 25px;
+  opacity: 0.01;
+  cursor: text;
+}
+.pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.pin-dots i {
+  width: 17px;
+  height: 17px;
+  border: 2px solid #aac2d4;
+  border-radius: 50%;
+  background: #fff;
+  transition: 0.18s;
+}
+.pin-dots i.is-filled {
+  border-color: #168ddd;
+  background: #168ddd;
+  box-shadow: 0 0 0 4px #168ddd1c;
+}
+.pin-modal form > button {
+  padding: 13px;
+  border: 0;
+  border-radius: 11px;
+  color: #fff;
+  background: linear-gradient(135deg, #168ddd, #0868b0);
+  font-weight: 800;
+  cursor: pointer;
+}
+.pin-modal form > button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.pin-modal em {
+  color: #8a9aa7;
+  font-size: 10px;
+  font-style: normal;
+}
+
+/* 처리 완료 안내 */
+.booking-complete {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+.booking-complete > span {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #21aa7b;
+  font-size: 28px;
+}
+.booking-complete h2 {
+  margin: 18px 0 15px;
+  color: #102a43;
+}
+.booking-complete p {
+  margin: 0;
+  color: #8494a1;
+  font-size: 10px;
+}
+.booking-complete > strong {
+  margin: 5px 0 10px;
+  color: #0873ba;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+.booking-complete small {
+  margin-bottom: 22px;
+  color: #687f91;
+}
+.booking-complete button {
+  width: 100%;
+}
+/* 반응형 화면 — (max-width: 900px) 조건에서 배치와 크기 조정 */
+@media (max-width: 900px) {
+  .flight-card {
+    grid-template-columns: 1fr 1fr;
+  }
+  .flight-airports {
+    display: none;
+  }
+  .flight-card > button {
+    grid-column: 2;
+  }
+}
+/* 반응형 화면 — (max-width: 600px) 조건에서 배치와 크기 조정 */
+@media (max-width: 600px) {
+  .flight-results {
+    padding: 18px;
+  }
+  .destination-attractions {
+    grid-template-columns: 1fr;
+  }
+  .destination-attractions ul {
+    grid-template-columns: 1fr;
+  }
+  .flight-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .flight-card > button {
+    grid-column: 1;
+  }
+}

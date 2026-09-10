@@ -1,0 +1,28 @@
+.about-page { padding-bottom: 80px; }
+.about-hero { position: relative; isolation: isolate; overflow: hidden; padding: 64px 0 72px; background: #233e51; border-bottom: 1px solid #39566c; }
+.about-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.about-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #102536b8, #10253655); pointer-events: none; }
+.about-hero .about-kicker { color: #b8ddf7; }
+.about-kicker { color: #346c97; font-size: 12px; font-weight: 800; letter-spacing: 2px; }
+.about-hero h1 { margin: 22px 0; font-size: clamp(38px, 5vw, 66px); line-height: 1.2; letter-spacing: -2px; }
+.about-page .about-hero .container > h1 { color: #fff; text-shadow: 0 2px 12px #10253655; }
+.about-hero .container > p:not(.about-kicker) { max-width: 570px; font-size: 18px; line-height: 1.9; color: #edf5fc; word-break: keep-all; }
+.about-cta { display: inline-flex; align-items: center; min-height: 48px; margin-top: 18px; padding: 14px 24px; background: #1769aa; color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; }
+.about-cta:hover { background: #12578e; }
+.about-cta:focus-visible { outline: 3px solid #1769aa; outline-offset: 4px; }
+.about-features { padding-block: 48px 64px; }
+.about-page h2 { font-size: clamp(25px, 3vw, 34px); color: #203c54; word-break: keep-all; }
+.about-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+.about-feature { padding: 32px; border: 1px solid #dce6ef; border-radius: 20px; background: #ffffffde; }
+.about-number { font-size: 32px; font-weight: 800; color: #8aabc4; }
+.about-feature h3 { margin: 20px 0 12px; font-size: 22px; color: #24435d; }
+.about-feature p, .about-ending > p:not(.about-kicker) { color: #586d80; line-height: 1.85; word-break: keep-all; }
+.about-ending { padding: 48px 24px; text-align: center; background: linear-gradient(135deg, #edf5fc, #e2ecf6); border-radius: 24px; }
+.site-nav a[aria-current="page"] { color: #b8dfff; text-decoration: underline; text-underline-offset: 8px; }
+@media (max-width: 640px) {
+  .about-hero { padding: 36px 0 44px; }
+  .about-hero .container > p:not(.about-kicker) { font-size: 16px; }
+  .about-feature-grid { grid-template-columns: 1fr; gap: 18px; }
+  .about-feature { padding: 24px; }
+  .about-features { padding-block: 32px 40px; }
+}

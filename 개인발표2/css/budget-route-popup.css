@@ -1,0 +1,445 @@
+
+
+/* 예산별 여행지 버튼과 팝업 */
+.budget-popup-anchor {
+  position: relative;
+  z-index: 30;
+  flex: 0 0 auto;
+}
+.budget-popup-toggle {
+  display: flex;
+  width: 132px;
+  height: 82px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ffffff9c;
+  border-radius: 16px;
+  color: #fff;
+  background: radial-gradient(circle at 90% 0, #54c7ff59, transparent 42%),
+    linear-gradient(135deg, #071d35, #0a609b);
+  box-shadow: 0 15px 35px #07274638;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.budget-popup-toggle:hover,
+.budget-popup-toggle.is-open {
+  box-shadow: 0 18px 42px #0727464a;
+  transform: translateY(-2px);
+}
+.budget-popup-toggle > span:first-child {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  border: 1px solid #ffffff66;
+  border-radius: 11px;
+  color: #ade3ff;
+  background: #ffffff12;
+  font-size: 17px;
+  transform: rotate(-12deg);
+}
+.budget-popup-toggle > span:nth-child(2) {
+  display: grid;
+  flex: 1;
+  gap: 3px;
+}
+.budget-popup-toggle small {
+  color: #8ed5ff;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+}
+.budget-popup-toggle strong {
+  font-size: 12px;
+  white-space: nowrap;
+}
+.budget-popup-toggle > b {
+  color: #b8e7ff;
+  font-size: 19px;
+  font-weight: 400;
+}
+.budget-route-popup {
+  position: absolute;
+  top: 92px;
+  right: 0;
+  box-sizing: border-box;
+  width: 340px;
+  overflow: hidden;
+  border: 1px solid #ffffffc7;
+  border-radius: 22px;
+  background: #fafdffff;
+  box-shadow:
+    0 22px 55px #0727462b,
+    0 3px 10px #123b6914;
+  animation: budget-popup-in 0.2s ease-out;
+}
+.budget-route-popup > header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 20px 21px 18px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 88% 8%, #59c8ff70, transparent 42%),
+    linear-gradient(135deg, #071d35, #0a5388);
+}
+.budget-popup-icon {
+  display: grid;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #ffffff7a;
+  border-radius: 12px;
+  background: #ffffff17;
+  box-shadow: inset 0 1px 0 #ffffff52;
+  color: #aee4ff;
+  font-size: 19px;
+  transform: rotate(-12deg);
+}
+.budget-route-popup header div {
+  flex: 1;
+  min-width: 0;
+}
+.budget-popup-close {
+  align-self: flex-start;
+  padding: 0;
+  border: 0;
+  color: #bce6ff;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.budget-route-popup header small {
+  display: block;
+  margin-bottom: 5px;
+  color: #8fd6ff;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 1.65px;
+}
+.section-heading .budget-route-popup h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+}
+
+/* 예산 입력과 추천 노선 결과 */
+.budget-input-wrap {
+  display: grid;
+  gap: 7px;
+  padding: 19px 20px 13px;
+  color: #496176;
+  font-size: 10px;
+  font-weight: 800;
+}
+.budget-input-wrap > div {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbddea;
+  border-radius: 11px;
+  background: #fff;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.budget-input-wrap > div:focus-within {
+  border-color: #168ddd;
+  box-shadow: 0 0 0 4px #168ddd14;
+}
+.budget-input-wrap input {
+  min-width: 0;
+  flex: 1;
+  padding: 11px 5px 11px 12px;
+  border: 0;
+  outline: 0;
+  color: #102b43;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: right;
+}
+.budget-input-wrap input::placeholder {
+  color: #aab8c4;
+  font-weight: 500;
+}
+.budget-input-wrap b {
+  padding-right: 12px;
+  color: #486177;
+  font-size: 12px;
+}
+.budget-search-button {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 0 20px 10px;
+  padding: 11px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #168ddd, #0768ae);
+  box-shadow: 0 8px 18px #168ddd2b;
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.budget-search-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #27a1ea, #075f9e);
+}
+.budget-search-button:disabled {
+  color: #9aabba;
+  background: #e4edf3;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.budget-trip-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin: 0 20px 14px;
+  padding: 4px;
+  border-radius: 10px;
+  background: #e9f1f7;
+}
+.budget-trip-types button {
+  padding: 7px;
+  border: 0;
+  border-radius: 7px;
+  color: #718697;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.budget-trip-types button.is-active {
+  color: #0879bc;
+  background: #fff;
+  box-shadow: 0 3px 9px #163a5517;
+}
+.budget-empty {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  padding: 13px 20px 17px;
+  color: #8395a5;
+  text-align: center;
+}
+.budget-empty > span {
+  color: #59aee1;
+  font-size: 25px;
+  line-height: 1;
+}
+.budget-empty p,
+.budget-no-result p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.55;
+}
+.budget-search-loading {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 23px 20px 26px;
+  color: #718697;
+  text-align: center;
+}
+.budget-loading-plane {
+  margin-bottom: 3px;
+  color: #168ddd;
+  font-size: 24px;
+  animation: budget-plane-fly 1.15s ease-in-out infinite;
+}
+.budget-search-loading strong {
+  color: #294a63;
+  font-size: 12px;
+}
+.budget-search-loading small {
+  font-size: 9px;
+}
+.budget-search-loading > i {
+  width: 150px;
+  height: 4px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #dceaf3;
+}
+.budget-search-loading > i b {
+  display: block;
+  width: 45%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #42b5f3, #0876ba);
+  animation: budget-loading-bar 1.1s ease-in-out infinite;
+}
+.budget-result-area {
+  padding: 0 11px 8px;
+}
+.budget-result-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 6px 9px;
+  color: #718697;
+  font-size: 10px;
+}
+.budget-result-summary strong {
+  color: #087bc2;
+  font-size: 11px;
+}
+.budget-route-list {
+  display: grid;
+  max-height: 430px;
+  margin: 0;
+  padding: 0 3px 0 0;
+  gap: 7px;
+  overflow-y: auto;
+  list-style: none;
+  scrollbar-color: #aacce1 transparent;
+  scrollbar-width: thin;
+}
+.budget-route-list button {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 9px;
+  border: 1px solid #deebf3;
+  border-radius: 12px;
+  color: inherit;
+  background: linear-gradient(135deg, #f2f9fe, #fff);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.18s,
+    transform 0.18s,
+    box-shadow 0.18s;
+}
+.budget-route-list button:hover {
+  border-color: #68b8e8;
+  box-shadow: 0 7px 16px #157eba17;
+  transform: translateY(-1px);
+}
+.budget-rank {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border-radius: 7px;
+  color: #197fbd;
+  background: #dff2fd;
+  font-size: 9px;
+  font-weight: 900;
+}
+.budget-route-copy,
+.budget-route-price {
+  display: grid;
+  gap: 3px;
+}
+.budget-route-copy small,
+.budget-route-price small {
+  color: #8497a7;
+  font-size: 7px;
+  font-weight: 700;
+}
+.budget-route-copy strong {
+  color: #15354d;
+  font-size: 12px;
+}
+.budget-route-copy i {
+  padding: 0 4px;
+  color: #3a9ed6;
+  font-style: normal;
+}
+.budget-route-copy em {
+  max-width: 90px;
+  overflow: hidden;
+  color: #667e90;
+  font-size: 8px;
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.budget-route-price {
+  justify-items: end;
+}
+.budget-route-price b {
+  color: #0879bc;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.budget-no-result {
+  margin: 2px 3px;
+  padding: 22px 10px;
+  border: 1px dashed #cbdde9;
+  border-radius: 12px;
+  color: #7a8e9e;
+  text-align: center;
+}
+.budget-no-result strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #536c7f;
+  font-size: 11px;
+}
+.budget-caption {
+  margin: 0;
+  padding: 0 17px 13px;
+  color: #9aa9b5;
+  font-size: 8px;
+  text-align: right;
+}
+/* budget-popup-in 애니메이션 정의 */
+@keyframes budget-popup-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* budget-plane-fly 애니메이션 정의 */
+@keyframes budget-plane-fly {
+  0%, 100% {
+    transform: translateX(-12px) rotate(-9deg);
+  }
+  50% {
+    transform: translateX(12px) translateY(-3px) rotate(-9deg);
+  }
+}
+/* budget-loading-bar 애니메이션 정의 */
+@keyframes budget-loading-bar {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(230%);
+  }
+}
+/* 반응형 화면 — (max-width: 800px) 조건에서 배치와 크기 조정 */
+@media (max-width: 800px) {
+  .budget-popup-anchor {
+    position: relative;
+    z-index: 30;
+  }
+  .budget-popup-toggle {
+    width: 132px;
+  }
+  .budget-route-popup {
+    position: absolute;
+    inset: 92px 0 auto auto;
+    width: min(340px, calc(100vw - 28px));
+    max-height: calc(100vh - 100px);
+  }
+  .budget-route-list {
+    max-height: min(355px, calc(100vh - 330px));
+  }
+}

@@ -1,0 +1,13 @@
+.airline-country,
+.airline-info .airline-country {
+  display: block;
+  margin-top: 4px;
+  color: #526579;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: normal;
+  white-space: normal;
+}
+.airline-special-identity { display: flex; align-items: center; }
+.airline-special-hero .airline-country { color: #edf4fb; }

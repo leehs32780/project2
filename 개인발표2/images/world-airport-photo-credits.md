@@ -1,0 +1,28 @@
+# 추가 공항 사진 출처
+
+Wikimedia Commons의 축소본을 사용하고 카드 비율에 맞춰 가운데를 잘라 표시합니다. 촬영일은 원본 페이지를 참고하세요.
+
+- **FCO** (`airport-fco.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Aeroporto_di_Roma-Fiumicino_(2024)_1.jpg) · Air fans · [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+- **MXP** (`airport-mxp.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Milan_malpensa_terminal_airport.jpg) · Arne Müseler · [CC BY-SA 3.0 de](https://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
+- **MAD** (`airport-mad.jpg`): [원본](https://commons.wikimedia.org/wiki/File:MAD-LEMD_T4_Sat%C3%A9lite.jpg) · Felipealvarez · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **BCN** (`airport-bcn.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Barcelona-T1-exterior.jpg) · Gpetrov · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)
+- **ZRH** (`airport-zrh.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Zurich_Airport,_April_2019.jpg) · Henry Töpel · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **VIE** (`airport-vie.jpg`): [원본](https://commons.wikimedia.org/wiki/File:2011-06-14_10-23-56_Austria_Nieder%C3%B6sterreich_Fischamend_Markt.jpg) · Hansueli Krapf This file was uploaded with Commonist. · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)
+- **MUC** (`airport-muc.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Munich_airport_2019_2.jpg) · Arne Müseler · [CC BY-SA 3.0 de](https://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
+- **PRG** (`airport-prg.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Check-in_on_terminal_2_of_the_V%C3%A1clav_Havel_Airport_in_Prague.jpg) · Filip Troníček · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **WAW** (`airport-waw.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Lotnisko_Chopina_w_Warszawie_2018b.jpg) · Adrian Grycuk · [CC BY-SA 3.0 pl](https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en)
+- **HEL** (`airport-hel.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Entrance_to_Helsinki_Airport_in_early_morning.jpg) · JIP · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **LIS** (`airport-lis.jpg`): [원본](https://commons.wikimedia.org/wiki/File:PortelaAirport_Terminal2.jpg) · DgOlsen · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **ATH** (`airport-ath.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Athens_International_Airport_Eleftherios_Venizelos_%CE%94%CE%B9%CE%B5%CE%B8%CE%BD%CE%AE%CF%82_%CE%91%CE%B5%CF%81%CE%BF%CE%BB%CE%B9%CE%BC%CE%AD%CE%BD%CE%B1%CF%82_%CE%91%CE%B8%CE%B7%CE%BD%CF%8E%CE%BD_%CE%95%CE%BB%CE%B5%CF%85%CE%B8%CE%AD%CF%81%CE%B9%CE%BF%CF%82_%CE%92%CE%B5%CE%BD%CE%B9%CE%B6%CE%AD%CE%BB%CE%BF%CF%82_2019-12-01_i.jpg) · Manfred Werner (Tsui) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **GRU** (`airport-gru.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Sao_paulo_airport_terminal_3.jpg) · Arne Müseler · [CC BY-SA 3.0 de](https://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
+- **GIG** (`airport-gig.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Riodejaneiro_aerea_aeroportogaleao-131756(cut).jpg) · Portal da Copa /Governo Federal Brasileiro / Daniel Basil · [CC BY 3.0 br](https://creativecommons.org/licenses/by/3.0/br/deed.en)
+- **EZE** (`airport-eze.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Ezeizaaero.jpg) · Ezequiel12096 · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **SCL** (`airport-scl.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Terminal_Aeropuerto_Pudahuel.jpg) · Phillip Capper from Wellington, New Zealand · [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
+- **LIM** (`airport-lim.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Aeropuerto_Internacional_Jorge_Ch%C3%A1vez_en_2024.jpg) · TomasVial · [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+- **BOG** (`airport-bog.jpg`): [원본](https://commons.wikimedia.org/wiki/File:El-dorado-from-air.jpg) · EFE · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **JNB** (`airport-jnb.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Concourse_in_Terminal_A_of_OR_Tambo_Airport_June_2026.jpg) · Nick-D · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **CPT** (`airport-cpt.jpg`): [원본](https://commons.wikimedia.org/wiki/File:2013.01.03_Ciudad_del_Cabo,_ZA_(22).JPG) · BlogDeBanderas · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **CAI** (`airport-cai.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Cairo_Airport_Terminal_3.jpg) · Alensha · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+- **ADD** (`airport-add.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Aeropuerto_Internacional_Bole_2022_3.jpg) · ProtoplasmaKid · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0)
+- **NBO** (`airport-nbo.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Jomo_Kenyatta_International_Airport_(JKIA).jpg) · li yong · [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0)
+- **CMN** (`airport-cmn.jpg`): [원본](https://commons.wikimedia.org/wiki/File:Casablanca_Mohammed_V_International_Airport,_Morocco_January_2024_-_Front.jpg) · Sharon Hahn Darlin · [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
