@@ -111,7 +111,7 @@ export const places = Object.fromEntries(`
 에어프레미아|Air Premia
 제주항공|Jeju Air
 진에어|Jin Air
-티웨이항공|T'way Air
+트리니티항공|Trinity Airways
 에어부산|Air Busan
 이스타항공|Eastar Jet
 에어서울|Air Seoul

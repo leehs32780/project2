@@ -19,6 +19,9 @@
   height: 100%;
   object-fit: contain;
 }
+.airline-logo-TW {
+  background: #2f3338;
+}
 .airline-logo-fallback { color: #24384d; font-size: 11px; text-align: center; white-space: normal; }
 .airline-special-hero .airline-logo { margin-right: 12px; }
 .airline-special-hero .airline-logo img { position: static; z-index: auto; }

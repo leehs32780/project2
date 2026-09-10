@@ -296,7 +296,7 @@ export const airlines = [
   { name: "에어프레미아", code: "YP", color: "#2f2a8f" },
   { name: "제주항공", code: "7C", color: "#f26b21" },
   { name: "진에어", code: "LJ", color: "#5a9f38" },
-  { name: "티웨이항공", code: "TW", color: "#d92832" },
+  { name: "트리니티항공", code: "TW", color: "#2f3338" },
   { name: "에어부산", code: "BX", color: "#245ea8" },
   { name: "이스타항공", code: "ZE", color: "#d9232e" },
   { name: "에어서울", code: "RS", color: "#20a887" },
